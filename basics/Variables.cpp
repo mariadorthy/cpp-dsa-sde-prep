@@ -31,11 +31,13 @@ public:
         cout<<"this is instance variable - id: "<<this->id<<endl;
     }
 };
+//Local Variable: visible only inside this block
 void LocalVariable(){
     int x=10;
     cout<<"this is local variable function using global variable inside local variable function explicitly: "<<::x<<endl; 
     cout<<"X:"<<x<<endl; // this is local variable which is overshadowing the global variable
 }
+//Instance Variable: Each object gets its own copy [have default values]
 void InstanceVariable(){
     Student s1,s2;
     s1.id=1;
@@ -43,11 +45,13 @@ void InstanceVariable(){
     cout<<"Student1: "<<s1.id<<endl;
     cout<<"Student2: "<<s2.id<<endl;
 }
+//Static Variable: Shared among all object (only 1 copy memory)
 void StaticVariable(){
     static int i=1; // Even i called many times, it will be initialized only once because of static variable 
     cout<<i<<endl;
     i++;
 }
+// const variable: cannot be reassigned after initialization 
 void ConstVariable(){
     const int a = 100;
     cout<<"A:"<<a<<endl;
@@ -62,6 +66,7 @@ void ScopeofVariable(){
 }
 
 int main(){
+    //Global variable: declared outside function [lifetime entire program]
     cout<<"----------------Global Variable is executed now----------------"<<endl;
     cout<<"x: "<<x<<endl;
     cout<<"----------------Local Variable is executed now----------------"<<endl;
