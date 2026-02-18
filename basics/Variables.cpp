@@ -19,8 +19,9 @@
 // this is instance variable - id: 10
 // ----------------Scope of Variable is executed now----------------
 
+#include <iostream>
 using namespace std;
-#include<iostream>
+
 int x=5; // this is global variable
 class Student{
 public:
